@@ -1,0 +1,250 @@
+#+TITLE: Examen de JavaScript
+#+AUTHOR: Patricio Martínez
+#+DATE: \today
+#+EMAIL: maxxcan@gmail.com
+#+OPTIONS: toc:nil 
+#+LATEX_HEADER:\usepackage[spanish]{babel}
+#+LaTeX_CLASS_OPTIONS: [addpoints, 12]{exam}
+
+* Qué es un Devops
+
+:PROPERTIES:
+:points:   
+:END:
+
+1) El cargo de una persona en una empresa
+2) Una filosofía de trabajo 
+3) El que reparte los bocadillos en la empresa
+4) Un invento americano para vender libros 
+
+* Algunas de sus fases de trabajo 
+:PROPERTIES:
+:points:   
+:END:
+
+1) Integración continua y continuo desarrollo
+2) Desarrollo ágil
+3) Comunicación continua 
+4) Todas las anteriores 
+
+* Por qué la documentación es importante
+
+:PROPERTIES:
+:points:   
+:END:
+
+1) Evita errores
+2) Mejora los tiempos en la resolución de errores 
+3) Nos permite ganar el premio Nobel de Literatura
+4) Evita rupturas de amistades y relaciones amorosas (true life)
+
+* Qué se gana con la cultura Devops 
+
+:PROPERTIES:
+:points:   
+:END:
+
+1) Los equipos que practican Devops despliegan 30 veces más frecuente, fallan 60 veces menos y se recuperan 160 veces más rápido
+2) Es la anterior porque es la más larga
+3) Es la primera porque lo dijo un tío serio
+4) Copón que sí! marcar la primera 
+
+* Qué significa git clone en el control de versiones Git
+
+:PROPERTIES:
+:points:   
+:END:
+
+1) Clonamos un repositorio 
+2) Copiamos un repositorio
+3) Creamos un repositorio nuevo en local con el contenido de otro en remoto
+4) Sincronizamos un dos repositorios
+
+* Cómo agregamos a la Git todos los ficheros de un directorio
+
+:PROPERTIES:
+:points:   
+:END:
+
+1) Git all 
+2) Git add all 
+3) Git add .
+4) Git add *
+
+* Cómo creo una rama en Git 
+
+:PROPERTIES:
+:points:   
+:END:
+
+1) Git ranch nueva-rama
+2) Git lanch nueva-rama
+3) Git branch -a nueva-rama
+4) Git branch nueva-rama 
+
+* Cuál es el comando más rápido para hacer un commit con mensaje
+
+:PROPERTIES:
+:points:   
+:END:
+
+1) Git commit -mensaje 
+2) Git commit -m "mensaje"
+3) Git commit 
+4) Git mueve-tu-cosita 
+
+* Cómo puedo ver los cambios que se produjeron en mi repositorio ayer
+
+:PROPERTIES:
+:points:   
+:END:
+
+
+1) Git diff "@{yesterday}"
+2) Git diff "@(yesterday)"
+3) Git diff "#{yesterday}"
+4) Git diff "(yesterday)"
+
+* Con qué comando de Git subimos un fichero al repositorio del servidor
+
+:PROPERTIES:
+:points:   
+:END:
+
+1) Git pull
+2) Git sube
+3) Git up
+4) Git push
+
+* Cómo se sabe quien es la persona que ha modificado un archivo
+
+:PROPERTIES:
+:points:   
+:END:
+
+
+1) Git blame archivo
+2) Git blame archivo
+3) Git blame archivo
+4) Git blame archivo
+5) Git blame archivo
+6) Git blame archivo
+7) Git blame archivo
+8) Git blame archivo
+
+* Cómo nos descargamos un contenedor con Docker 
+
+:PROPERTIES:
+:points:   
+:END:
+
+1) docker pull contenedor 
+2) docker search contenedor 
+3) docker clone contenedor 
+4) docker push contenedor 
+
+* Cómo ejecutamos de forma interactiva un contenedor 
+
+:PROPERTIES:
+:points:   
+:END:
+
+1) docker run contenedor 
+2) docker run contenedor -it
+3) docker run -it contenedor 
+4) docker sh -it contenedor 
+
+* Cómo borramos una imagen con Docker
+
+:PROPERTIES:
+:points:   
+:END:
+
+1) docker rm imagen
+2) docker remove imagen
+3) docker mvi imagen 
+4) docker rmi imagen
+
+* Cuantas libertades tiene el software libre
+
+:PROPERTIES:
+:points:   
+:END:
+
+1) tres
+2) dos 
+3) no tiene
+4) cuatro
+
+* Cómo creo un directorio en bash
+
+:PROPERTIES:
+:points:   
+:END:
+
+1) dir directorio
+2) mkdir directorio
+3) directorio ven a mi 
+4) la primera, que sí, de verdad 
+
+* En bash como borro un directorio
+
+:PROPERTIES:
+:points:   
+:END:
+
+1) rm directorio
+2) remove directorio
+3) rm -rf directorio
+4) mkrm directorio 
+
+* Una forma rápida de crear un archivo en bash
+
+:PROPERTIES:
+:points:   
+:END:
+
+1) touch archivo
+2) mkdir archivo
+3) cat archivo 
+4) ls archivo 
+
+* Qué es Redux 
+
+:PROPERTIES:
+:points:   
+:END:
+
+1) Una función enzimática
+2) Una librería cuyo propósito es desplegar una aplicación 
+3) Una librería cuyo propósito es "controlar" el estado de nuestras aplicaciones
+4) Una librería de javascript para reducir el consumo de las aplicaciones
+
+* Cual es el mejor sistema operativo del mundo 
+
+:PROPERTIES:
+:points:   
+:END:
+
+1) Linux
+2) GNU/Linux
+3) Cualquiera de las anteriores 
+
+* Resultados 
+
+#+BEGIN_SRC emacs-lisp 
+(setq total-points 0)    ; counter for the total points
+
+;; now loop over headlines
+(org-element-map 
+    (org-element-parse-buffer 'headline) 'headline 
+  ;; function to print headline title and points
+  (lambda (headline) 
+    (let ((points (org-element-property :POINTS headline))
+          (title  (org-element-property :title headline)))
+      (if points (progn
+                   (setq total-points (+ total-points (string-to-number points)))
+                   (princ (format "title=%s\nPOINTS=%s\n\n" title points)))))))
+
+(princ (format "Puntos totales = %s" total-points))
+#+END_SRC
